@@ -1,0 +1,52 @@
+.navbar {
+    background-color: #282c34;
+    padding: 10px 20px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .navbar-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .navbar-left {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .username {
+    display: flex;
+    align-items: center;
+  }
+  
+  .username span {
+    margin-right: 10px;
+    font-size: 18px;
+  }
+  
+  .logout-btn, .login-btn {
+    background-color: #61dafb;
+    border: none;
+    padding: 8px 12px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-left: 10px;
+  }
+  
+  .logout-btn:hover, .login-btn:hover {
+    background-color: #21a1f1;
+  }
+  

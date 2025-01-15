@@ -1,0 +1,93 @@
+.authView {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 40vw;
+    height: 80vh;
+    background-color: rgb(212, 188, 194);
+    border-radius: 1em;
+    overflow: hidden;
+  }
+  
+  .row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  
+  .switch-button {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+  }
+  
+  .switch-button:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .views {
+    padding: 16px;
+    background-color: rgb(202, 198, 198);
+    height: 100%;
+    width: 100%;
+  }
+  
+  .hide {
+    display: none;
+  }
+  
+  .input-field {
+    border: 1px solid black;
+    height: 20px;
+    width: 70%;
+    border-radius: 5px;
+    padding: 5px 16px;
+    outline: none;
+  }
+
+  .input-container{
+    margin: 10px 20px;
+  }
+
+  .expanded{
+    height: 75%;
+  }
+
+  .horizontal-center{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+
+  .auth-button{
+    margin: 16px;
+    margin-top: 40px;
+    width: 50%;
+    height: 30px;
+    background-color: rgb(84, 84, 253);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+  }
+
+  .auth-button:hover{
+    background-color: rgb(33, 33, 250);
+    cursor: pointer;
+  }
+  
