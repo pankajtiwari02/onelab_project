@@ -33,10 +33,6 @@ jobs:
         run: |
           docker push ${{ secrets.DOCKER_USERNAME }}/react-app:latest
 
-      - name: Present Working Directory
-        run: |
-          pwd
-
       # Step 5: Build the Docker image
       - name: Build Docker image
         run: |
@@ -47,16 +43,18 @@ jobs:
       # Step 6: Push the Docker image to Docker Hub
       - name: Push Docker image
         run: |
+          cd ./server/authentication-service
           docker push ${{ secrets.DOCKER_USERNAME }}/authentication-service:latest
 
       # Step 7: Build the Docker image
       - name: Build Docker image
         run: |
-          cd ../user-service
+          cd ./server/user-service
           docker build -t user-service:latest .
           docker tag user-service:latest ${{ secrets.DOCKER_USERNAME }}/user-service:latest
 
       # Step 8: Push the Docker image to Docker Hub
       - name: Push Docker image
         run: |
+          cd ./server/user-service
           docker push ${{ secrets.DOCKER_USERNAME }}/user-service:latest
