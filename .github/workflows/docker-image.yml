@@ -36,6 +36,7 @@ jobs:
       # Step 5: Build the Docker image
       - name: Build Docker image
         run: |
+          pwd
           cd ../server/authentication-service
           docker build -t authentication-service:latest .
           docker tag authentication-service:latest ${{ secrets.DOCKER_USERNAME }}/authentication-service:latest
