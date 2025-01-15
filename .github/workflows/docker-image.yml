@@ -3,12 +3,12 @@ name: Docker Image CI/CD Pipeline
 on:
   push:
     branches:
-      - main  # Trigger on push to 'main' branch (change if you use a different branch)
+      - main # Trigger on push to 'main' branch (change if you use a different branch)
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
       # Step 1: Check out the code
       - name: Checkout code
@@ -20,35 +20,38 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
-      
+
       # Step 3: Build the Docker image
       - name: Build Docker image
         run: |
           cd ./client
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/react-app:latest .
-      
+          docker build -t react-app:latest .
+          docker tag react-app:latest ${{ secrets.DOCKER_USERNAME }}/react-app:latest
+
       # Step 4: Push the Docker image to Docker Hub
       - name: Push Docker image
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/authentication-service:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/react-app:latest
 
       # Step 5: Build the Docker image
       - name: Build Docker image
         run: |
           cd ../server/authentication-service
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/user-service:latest .
-      
+          docker build -t authentication-service:latest .
+          docker tag authentication-service:latest ${{ secrets.DOCKER_USERNAME }}/authentication-service:latest
+
       # Step 6: Push the Docker image to Docker Hub
       - name: Push Docker image
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/react-app:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/authentication-service:latest
 
       # Step 7: Build the Docker image
       - name: Build Docker image
         run: |
           cd ../user-service
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/user-service:latest .
-      
+          docker build -t user-service:latest .
+          docker tag user-service:latest ${{ secrets.DOCKER_USERNAME }}/user-service:latest
+
       # Step 8: Push the Docker image to Docker Hub
       - name: Push Docker image
         run: |
