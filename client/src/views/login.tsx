@@ -141,92 +141,92 @@ function Login() {
       console.log(err);
     }
   };
-
+  // CI CD Pipeline integrated
   return (
-      <div className="authView">
-        <div className="card">
-          <div className="row">
-            <div className="switch-button" onClick={showSignInView}>
+    <div className="authView">
+      <div className="card">
+        <div className="row">
+          <div className="switch-button" onClick={showSignInView}>
+            Sign In
+          </div>
+          <div className="switch-button" onClick={showSignUpView}>
+            Sign Up
+          </div>
+        </div>
+        <div id="sign-in-view" ref={signInRef} className="views">
+          <div className="expanded">
+            <div className="input-container">
+              <p className="label">Email:</p>
+              <input
+                type="text"
+                className="input-field"
+                value={signInEmail}
+                onChange={(e) => setSignInEmail(e.target.value)}
+              />
+            </div>
+            <div className="input-container">
+              <p className="label">Password:</p>
+              <input
+                type="password"
+                className="input-field"
+                value={signInPassword}
+                onChange={(e) => setSignInPassword(e.target.value)}
+              />
+            </div>
+          </div>
+          <div className="horizontal-center">
+            <div className="auth-button" onClick={handleSignIn}>
               Sign In
             </div>
-            <div className="switch-button" onClick={showSignUpView}>
+          </div>
+        </div>
+        <div id="sign-up-view" ref={signUpRef} className="views hide">
+          <div className="expanded">
+            <div className="input-container">
+              <p className="label">Name:</p>
+              <input
+                type="text"
+                className="input-field"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </div>
+            <div className="input-container">
+              <p className="label">Phone Number:</p>
+              <input
+                type="text"
+                className="input-field"
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
+              />
+            </div>
+            <div className="input-container">
+              <p className="label">Email:</p>
+              <input
+                type="text"
+                className="input-field"
+                value={signUpEmail}
+                onChange={(e) => setSignUpEmail(e.target.value)}
+              />
+            </div>
+            <div className="input-container">
+              <p className="label">Password:</p>
+              <input
+                type="password"
+                className="input-field"
+                value={createPassword}
+                onChange={(e) => setCreatePassword(e.target.value)}
+              />
+            </div>
+          </div>
+          <div className="horizontal-center">
+            <div className="auth-button" onClick={handleSignUp}>
               Sign Up
-            </div>
-          </div>
-          <div id="sign-in-view" ref={signInRef} className="views">
-            <div className="expanded">
-              <div className="input-container">
-                <p className="label">Email:</p>
-                <input
-                  type="text"
-                  className="input-field"
-                  value={signInEmail}
-                  onChange={(e) => setSignInEmail(e.target.value)}
-                />
-              </div>
-              <div className="input-container">
-                <p className="label">Password:</p>
-                <input
-                  type="password"
-                  className="input-field"
-                  value={signInPassword}
-                  onChange={(e) => setSignInPassword(e.target.value)}
-                />
-              </div>
-            </div>
-            <div className="horizontal-center">
-              <div className="auth-button" onClick={handleSignIn}>
-                Sign In
-              </div>
-            </div>
-          </div>
-          <div id="sign-up-view" ref={signUpRef} className="views hide">
-            <div className="expanded">
-              <div className="input-container">
-                <p className="label">Name:</p>
-                <input
-                  type="text"
-                  className="input-field"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
-              </div>
-              <div className="input-container">
-                <p className="label">Phone Number:</p>
-                <input
-                  type="text"
-                  className="input-field"
-                  value={phoneNumber}
-                  onChange={(e) => setPhoneNumber(e.target.value)}
-                />
-              </div>
-              <div className="input-container">
-                <p className="label">Email:</p>
-                <input
-                  type="text"
-                  className="input-field"
-                  value={signUpEmail}
-                  onChange={(e) => setSignUpEmail(e.target.value)}
-                />
-              </div>
-              <div className="input-container">
-                <p className="label">Password:</p>
-                <input
-                  type="password"
-                  className="input-field"
-                  value={createPassword}
-                  onChange={(e) => setCreatePassword(e.target.value)}
-                />
-              </div>
-            </div>
-            <div className="horizontal-center">
-              <div className="auth-button" onClick={handleSignUp}>
-                Sign Up
-              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
   );
 }
 
